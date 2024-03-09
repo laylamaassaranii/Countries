@@ -20,38 +20,42 @@
       </button>
     </div>
     <div class="form-column">
-      <div class="form-group form-column">
+      <div class="form-group">
         <input
           type="text"
           formControlName="firstName"
           class="form-control"
           placeholder="First Name"
         />
+        <label for="firstName" class="form-label">First Name</label>
       </div>
-      <div class="form-group form-column">
+      <div class="form-group">
         <input
           type="text"
           formControlName="lastName"
           class="form-control"
           placeholder="Last Name"
         />
+        <label for="lastName" class="form-label">Last Name</label>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group form-group-mail-pass">
       <input
         type="email"
         formControlName="email"
         class="form-control"
         placeholder="Email"
       />
+      <label for="email" class="form-label">Email</label>
     </div>
-    <div class="form-group">
+    <div class="form-group form-group-mail-pass">
       <input
         type="password"
         formControlName="password"
         class="form-control"
         placeholder="Password"
       />
+      <label for="password" class="form-label">Password</label>
     </div>
     <button
       type="submit"
@@ -60,5 +64,9 @@
     >
       Sign Up
     </button>
+    <p class="login-text">
+      Already have an account?
+      <span class="login-link" routerLink="/login">Log In</span>
+    </p>
   </form>
 </div>
