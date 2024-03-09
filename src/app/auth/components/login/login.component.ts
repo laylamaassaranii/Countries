@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private router: Router
   ) {}
 
   @ViewChild('firstNameInput') firstNameInput!: ElementRef;
@@ -37,6 +39,7 @@ export class LoginComponent implements OnInit {
       this.apiService.login(userData).subscribe(
         (response) => {
           console.log('Login successful:', response);
+          this.router.navigate(['/countries']);
         },
         (error) => {
           console.error('Error logging in:', error);

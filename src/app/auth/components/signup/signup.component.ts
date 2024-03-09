@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +15,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private router: Router
   ) {}
 
   @ViewChild('firstNameInput') firstNameInput!: ElementRef;
@@ -45,6 +47,7 @@ export class SignupComponent implements OnInit {
       this.apiService.createUser(userData).subscribe(
         (response) => {
           console.log('User created successfully:', response);
+          this.router.navigate(['/countries']);
         },
         (error) => {
           console.error('Error creating user:', error);
