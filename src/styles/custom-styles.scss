@@ -13,3 +13,16 @@
 .btn-primary:focus {
   background-color: $primary-hover !important;
 }
+
+.btn-primary-light {
+  background-color: transparent !important;
+  border: 1px solid $primary;
+  color: $primary;
+}
+
+.btn-primary-light:hover,
+.btn-primary-light.active,
+.btn-primary-light:focus {
+  background-color: $primary !important;
+  color: $white;
+}
