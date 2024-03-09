@@ -15,6 +15,10 @@ export class ApiService {
     return this.http.post<any>(`${this.api_url}/api/User/SignUp()`, userData);
   }
 
+  login(userData: any): Observable<any> {
+    return this.http.post<any>(`${this.api_url}/api/User/Login()`, userData)
+  }
+
   getUserById(id: number): Observable<any> {
     return this.http.get<any>(`${this.api_url}/api/User/GetUserById(${id})`);
   }

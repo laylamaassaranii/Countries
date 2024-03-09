@@ -39,7 +39,7 @@ export class SignupComponent implements OnInit {
         lastName: this.signupForm.get('Lastname')?.value,
         email: this.signupForm.get('Email')?.value,
         password: this.signupForm.get('Password')?.value,
-        role: this.adminSelected ? '1' : '',
+        rolename: this.adminSelected ? '1' : '',
       };
 
       this.apiService.createUser(userData).subscribe(
