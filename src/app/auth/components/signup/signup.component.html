@@ -5,14 +5,14 @@
   <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form">
     <div class="form-group">
       <button
-        class="btn btn-type"
+        class="btn btn-type btn-primary"
         (click)="selectedUserType = 'admin'; adminSelected = true"
         [ngClass]="{ active: adminSelected }"
       >
         Admin
       </button>
       <button
-        class="btn btn-type"
+        class="btn btn-type btn-primary"
         (click)="selectedUserType = 'regular'; adminSelected = false"
         [ngClass]="{ active: !adminSelected }"
       >

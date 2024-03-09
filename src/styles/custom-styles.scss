@@ -1,0 +1,15 @@
+.btn-primary {
+  background-color: $primary !important;
+  border: none;
+}
+
+// .btn-primary.active {
+//   background-color: $primary-hover;
+//   color: #fff;
+// }
+
+.btn-primary:hover,
+.btn-primary.active,
+.btn-primary:focus {
+  background-color: $primary-hover !important;
+}
