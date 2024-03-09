@@ -1,3 +1,5 @@
+// buttons
+
 .btn-primary {
   background-color: $primary !important;
   border: none;
@@ -25,4 +27,68 @@
 .btn-primary-light:focus {
   background-color: $primary !important;
   color: $white;
+}
+
+// routing links
+
+.routing-text {
+  font-size: 16px;
+  text-align: right;
+  margin-top: 25px;
+}
+
+.routing-link {
+  color: $primary;
+  cursor: pointer;
+}
+
+.routing-link:hover {
+  text-decoration: underline;
+}
+
+// form controls
+
+.form {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  margin-top: 15px;
+  transition: all 0.3s;
+}
+
+.form-control {
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.5px solid #475e6b;
+  outline: none;
+  transition: all 0.3s;
+  padding: 5px;
+}
+
+.form-label {
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  opacity: 1;
+  transform: translate(0.5em, -2em);
+  transform-origin: 0 0;
+  transition: all 0.3s;
+}
+
+.form-control::placeholder {
+  color: transparent;
+}
+.form-control:focus {
+  outline: none;
+  border-bottom: 2.5px solid #475e6b;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label {
+  transform: translateY(-3.25em) scale(0.8);
 }
