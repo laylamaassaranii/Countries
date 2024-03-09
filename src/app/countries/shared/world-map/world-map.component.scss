@@ -1,0 +1,21 @@
+.bg {
+  background-image: url("../../../../assets/watercolor-map.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-bottom: 150px;
+}
+
+.bg-stain {
+  background-image: url("../../../../assets/watercolor-blue-paint-texture-isolated-on-white-vector-22360281.jpg");
+  height: 100vh;
+  width: 100vh;
+  position: absolute;
+  left: -20vw;
+  overflow: visible;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(90deg); /* Rotate the background image by 90 degrees */
+}
