@@ -1,1 +1,39 @@
-<p>login works!</p>
+<app-background></app-background>
+<div class="container">
+  <h1>Login</h1>
+  <p class="subtitle">We are thrilled to welcome you again!</p>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="form-group form-group-mail-pass">
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        placeholder="Email"
+      />
+      <label for="email" class="form-label">Email</label>
+    </div>
+    <div class="form-group form-group-mail-pass">
+      <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        placeholder="Password"
+      />
+      <label for="password" class="form-label">Password</label>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-submit btn-primary"
+      [disabled]="loginForm.invalid"
+    >
+      Login
+    </button>
+    <p class="routing-text routing-link" routerLink="/register">
+      Did you forget your password?
+    </p>
+    <p class="routing-text-center">
+      Don't have an account?
+      <span class="routing-link" routerLink="/register">Create one</span>
+    </p>
+  </form>
+</div>
