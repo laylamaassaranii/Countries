@@ -1,3 +1,6 @@
+@import "../../../../../styles/colors.scss";
+@import "../../../../../styles/custom-styles.scss";
+
 .bg {
   background-image: url("../../../../../assets/watercolor-map.jpg");
   background-position: center;
@@ -8,14 +11,21 @@
 }
 
 .bg-stain {
-  background-image: url("../../../../../assets/watercolor-blue-paint-texture-isolated-on-white-vector-22360281.jpg");
+  background-image: url("../../../../../assets/airplane-watercolor-2.jpg");
   height: 100vh;
   width: 100vh;
   position: absolute;
-  left: -20vw;
+  left: -18vw;
   overflow: visible;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  transform: rotate(90deg); /* Rotate the background image by 90 degrees */
+  // transform: rotate(90deg); /* Rotate the background image by 90 degrees */
+}
+h1 {
+  font-size: 48px;
+  color: $dark-blue;
+  font-family: "Indie Flower", cursive;
+  text-align: center;
+  text-shadow: 2px 2px 0 $light-grey;
 }
