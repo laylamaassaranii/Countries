@@ -11,6 +11,10 @@
   margin-left: 100px;
 }
 
+.nav-link {
+  color: $dark-blue;
+}
+
 .input-group {
   background-color: transparent;
   border-radius: 5px;
@@ -18,6 +22,7 @@
   margin-right: 100px;
   width: 50vh;
 }
+
 .input-group-text {
   background-color: transparent;
   border-color: $secondary;
