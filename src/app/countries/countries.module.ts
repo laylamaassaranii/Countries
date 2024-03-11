@@ -6,6 +6,7 @@ import { WorldMapComponent } from './components/shared/world-map/world-map.compo
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { LayoutComponent } from './components/shared/layout/layout.component';
 import { CardComponent } from './components/card/card.component';
+import { CardListComponent } from './components/card-list/card-list/card-list.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CardComponent } from './components/card/card.component';
     NavbarComponent,
     LayoutComponent,
     CardComponent,
+    CardListComponent,
   ],
   imports: [CommonModule, CountriesRoutingModule],
 })

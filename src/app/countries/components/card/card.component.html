@@ -5,11 +5,10 @@
     alt="Card image cap"
   />
   <div class="card-body">
-    <p class="continent">Europe</p>
-    <h5 class="card-title">Russia</h5>
+    <p class="continent">{{ country.region }}</p>
+    <h5 class="card-title">{{ country.name.common }}</h5>
     <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      {{ country.flags.alt }}
     </p>
   </div>
 </div>
