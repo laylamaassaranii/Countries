@@ -27,6 +27,7 @@ export class CountryDetailsComponent implements OnInit {
       this.country = country;
       console.log('hello');
       console.log(this.country);
+      console.log(this.country.name.common);
     });
   }
 }

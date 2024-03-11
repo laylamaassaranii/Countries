@@ -24,6 +24,14 @@ export class ApiCountriesService {
   }
 
   getCountryById(code: string): Observable<any> {
-    return this.http.get<any>(`${this.api_url}/alpha/${code}`);
+    return this.http.get<any>(`${this.api_url}/alpha/${code}`).pipe(
+      map((response) => {
+        if (Array.isArray(response) && response.length > 0) {
+          return response[0];
+        } else {
+          return null;
+        }
+      })
+    );
   }
 }

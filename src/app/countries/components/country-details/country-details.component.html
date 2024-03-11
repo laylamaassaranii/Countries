@@ -1,1 +1,30 @@
 <app-background-details></app-background-details>
+<div *ngIf="country" class="card">
+  <div class="row g-0 h-100">
+    <div class="col-md-6 img-container h-100">
+      <img
+        src="../../../../assets/russia-kazan.jpg"
+        alt="Card image cap"
+        class="rounded-start img-fluid"
+      />
+    </div>
+    <div class="col-md-6 card-container-body">
+      <div class="card-body">
+        <h5 class="card-title">{{ country.name.common }}</h5>
+        <p class="card-text">
+          <strong>Official Name: </strong>{{ country.name.official }}
+        </p>
+        <p class="card-text">
+          <strong>Capital: </strong>{{ country.capital[0] }}
+        </p>
+        <p class="card-text"><strong>Region: </strong>{{ country.region }}</p>
+        <p class="card-text">
+          <strong>Population: </strong>{{ country.population }}
+        </p>
+        <p class="card-text">
+          <strong>Area: </strong>{{ country.area }} square kilometers
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
