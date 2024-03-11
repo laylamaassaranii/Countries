@@ -6,7 +6,15 @@
   />
   <div class="card-body">
     <p class="continent">{{ country.region }}</p>
-    <h5 class="card-title">{{ country.name.common }}</h5>
+    <div class="card-flags">
+      <h5 class="card-title">{{ country.name.common }}</h5>
+      <!-- <p class="country-flag">hello</p> -->
+      <img
+        class="country-flag"
+        [src]="country.flags.png"
+        alt="Flag of {{ country.name.common }}"
+      />
+    </div>
     <p class="card-text">
       {{ country.flags.alt }}
     </p>

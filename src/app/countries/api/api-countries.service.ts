@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { API_COUNTRIES } from '../components/constants/constants-countries';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,15 @@ export class ApiCountriesService {
   constructor(private http: HttpClient) {}
 
   getCountries(): Observable<any> {
-    return this.http.get<any>(`${this.api_url}`);
+    return this.http
+      .get<any[]>(`${this.api_url}`)
+      .pipe(
+        map((countries) =>
+          countries.filter(
+            (country) => country.name.common.trim().toLowerCase() !== 'israel'
+          )
+        )
+      );
   }
 
   // login(userData: any): Observable<any> {
