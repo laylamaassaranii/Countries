@@ -8,6 +8,7 @@ import { LayoutComponent } from './components/shared/layout/layout.component';
 import { CardComponent } from './components/card/card.component';
 import { CardListComponent } from './components/card-list/card-list/card-list.component';
 import { CountryDetailsComponent } from './components/country-details/country-details.component';
+import { BackgroundDetailsComponent } from './components/shared/background-details/background-details.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CountryDetailsComponent } from './components/country-details/country-de
     CardComponent,
     CardListComponent,
     CountryDetailsComponent,
+    BackgroundDetailsComponent,
   ],
   imports: [CommonModule, CountriesRoutingModule],
 })
