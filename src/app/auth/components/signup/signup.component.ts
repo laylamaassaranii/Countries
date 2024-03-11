@@ -12,6 +12,10 @@ export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
   selectedUserType!: string;
   adminSelected: boolean = false;
+  focusedEmail: boolean = false;
+  focusedPassword: boolean = false;
+  focusedFirstName: boolean = false;
+  focusedLastName: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -64,5 +68,19 @@ export class SignupComponent implements OnInit {
         console.error('Error fetching user data:', error);
       }
     );
+  }
+  outOfFocusEmail() {
+    this.focusedEmail = true;
+  }
+
+  outOfFocusPassword() {
+    this.focusedPassword = true;
+  }
+
+  outOfFocusFirstName() {
+    this.focusedFirstName = true;
+  }
+  outOfFocusLastName() {
+    this.focusedLastName = true;
   }
 }

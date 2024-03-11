@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  focusedEmail: boolean= false;
+  focusedPassword: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -46,5 +48,13 @@ export class LoginComponent implements OnInit {
         }
       );
     }
+  }
+
+  outOfFocusEmail(){
+    this.focusedEmail = true;
+  }
+
+  outOfFocusPassword() {
+    this.focusedPassword = true;
   }
 }

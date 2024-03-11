@@ -6,9 +6,10 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { BackgroundComponent } from './components/shared/background/background.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [LoginComponent, SignupComponent, BackgroundComponent],
-  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, HttpClientModule, MatInputModule],
 })
 export class AuthModule {}

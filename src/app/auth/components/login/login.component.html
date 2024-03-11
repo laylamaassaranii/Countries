@@ -9,8 +9,24 @@
         formControlName="Email"
         class="form-control"
         placeholder="Email"
+        (blur)="outOfFocusEmail()"
       />
       <label for="Email" class="form-label">Email</label>
+      <div
+        *ngIf="
+          loginForm.get('Email')?.invalid &&
+          focusedEmail &&
+          (loginForm.get('Email')?.dirty || loginForm.get('Email')?.touched)
+        "
+        class="error"
+      >
+        <div *ngIf="loginForm.get('Email')?.errors?.['required']">
+          Email is required.
+        </div>
+        <div *ngIf="loginForm.get('Email')?.errors?.['email']">
+          Invalid email format
+        </div>
+      </div>
     </div>
     <div class="form-group form-group-mail-pass">
       <input
@@ -18,8 +34,20 @@
         formControlName="Password"
         class="form-control"
         placeholder="Password"
+        (blur)="outOfFocusPassword()"
       />
       <label for="Password" class="form-label">Password</label>
+      <div
+        *ngIf="loginForm.get('Password')?.invalid && focusedPassword"
+        class="error"
+      >
+        <div *ngIf="loginForm.get('Password')?.errors?.['required']">
+          Password is required.
+        </div>
+        <div *ngIf="loginForm.get('Password')?.errors?.['minlength']">
+          Password must be at least 6 characters long
+        </div>
+      </div>
     </div>
     <button
       type="submit"
