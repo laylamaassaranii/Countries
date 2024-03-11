@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { CountriesHomeComponent } from './components/countries-home/countries-home.component';
 import { LayoutComponent } from './components/shared/layout/layout.component';
-import { CardListComponent } from './components/card-list/card-list/card-list.component';
+import { CountryDetailsComponent } from './components/country-details/country-details.component';
 
 const countriesRoutes: Routes = [
   {
@@ -12,7 +12,7 @@ const countriesRoutes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: CountriesHomeComponent },
-      { path: 'card', component: CardListComponent },
+      { path: 'country/:countryCode', component: CountryDetailsComponent },
     ],
   },
 ];

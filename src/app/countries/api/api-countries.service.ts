@@ -13,7 +13,7 @@ export class ApiCountriesService {
 
   getCountries(): Observable<any> {
     return this.http
-      .get<any[]>(`${this.api_url}`)
+      .get<any[]>(`${this.api_url}/all`)
       .pipe(
         map((countries) =>
           countries.filter(
@@ -23,11 +23,7 @@ export class ApiCountriesService {
       );
   }
 
-  // login(userData: any): Observable<any> {
-  //   return this.http.post<any>(`${this.api_url}/api/User/Login()`, userData)
-  // }
-
-  // getUserById(id: number): Observable<any> {
-  //   return this.http.get<any>(`${this.api_url}/api/User/GetUserById(${id})`);
-  // }
+  getCountryById(code: string): Observable<any> {
+    return this.http.get<any>(`${this.api_url}/alpha/${code}`);
+  }
 }

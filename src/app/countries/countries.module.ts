@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { LayoutComponent } from './components/shared/layout/layout.component';
 import { CardComponent } from './components/card/card.component';
 import { CardListComponent } from './components/card-list/card-list/card-list.component';
+import { CountryDetailsComponent } from './components/country-details/country-details.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CardListComponent } from './components/card-list/card-list/card-list.co
     LayoutComponent,
     CardComponent,
     CardListComponent,
+    CountryDetailsComponent,
   ],
   imports: [CommonModule, CountriesRoutingModule],
 })
