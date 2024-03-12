@@ -50,7 +50,6 @@ export class SignupComponent implements OnInit {
 
       this.apiService.createUser(userData).subscribe(
         (response) => {
-          console.log('User created successfully:', response);
           this.router.navigate(['/countries']);
         },
         (error) => {

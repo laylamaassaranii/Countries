@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiCountriesService } from '../../../api/api-countries.service';
+import { ApiCountriesService } from '../../../api/api-countries/api-countries.service';
+import { StateChangeService } from '../../../api/state-change/state-change.service';
 
 @Component({
   selector: 'app-card-list',
@@ -8,18 +9,25 @@ import { ApiCountriesService } from '../../../api/api-countries.service';
 })
 export class CardListComponent implements OnInit {
   countries: any[] = [];
+  searchValue = '';
 
-  constructor(private apiCountriesService: ApiCountriesService) {}
+  constructor(
+    private apiCountriesService: ApiCountriesService,
+    private stateChangeService: StateChangeService
+  ) {}
 
   ngOnInit(): void {
-    this.getCountries();
+    this.stateChangeService.state$.subscribe((state) => {
+      console.log(state);
+      this.searchValue = state;
+      this.getCountries(this.searchValue);
+    });
   }
 
-  getCountries() {
-    this.apiCountriesService.getCountries().subscribe(
+  getCountries(searchValue = '') {
+    this.apiCountriesService.getCountry(searchValue).subscribe(
       (data) => {
         this.countries = data;
-        console.log(this.countries);
       },
       (error) => {
         console.error('Error fetching countries:', error);

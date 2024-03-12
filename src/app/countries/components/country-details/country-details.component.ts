@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiCountriesService } from '../../api/api-countries.service';
+import { ApiCountriesService } from '../../api/api-countries/api-countries.service';
 
 @Component({
   selector: 'app-country-details',
@@ -25,9 +25,6 @@ export class CountryDetailsComponent implements OnInit {
   fetchCountryDetails(countryCode: string): void {
     this.countryService.getCountryById(countryCode).subscribe((country) => {
       this.country = country;
-      console.log('hello');
-      console.log(this.country);
-      console.log(this.country.name.common);
     });
   }
 }

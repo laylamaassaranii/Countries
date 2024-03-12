@@ -6,8 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  search() {
-    // Add your search logic here
-    console.log('Search button clicked!');
-  }
+  
 }

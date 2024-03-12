@@ -9,6 +9,8 @@ import { CardComponent } from './components/card/card.component';
 import { CardListComponent } from './components/card-list/card-list/card-list.component';
 import { CountryDetailsComponent } from './components/country-details/country-details.component';
 import { BackgroundDetailsComponent } from './components/shared/background-details/background-details.component';
+import { SearchBoxComponent } from './components/shared/search-box/search-box.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { BackgroundDetailsComponent } from './components/shared/background-detai
     CardListComponent,
     CountryDetailsComponent,
     BackgroundDetailsComponent,
+    SearchBoxComponent,
   ],
-  imports: [CommonModule, CountriesRoutingModule],
+  imports: [CommonModule, CountriesRoutingModule, ReactiveFormsModule],
 })
 export class CountriesModule {}

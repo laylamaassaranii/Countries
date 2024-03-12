@@ -14,32 +14,3 @@
 .nav-link {
   color: $dark-blue;
 }
-
-.input-group {
-  background-color: transparent;
-  border-radius: 5px;
-  margin-right: 100px;
-  width: 50vh;
-}
-
-.input-group-text {
-  background-color: transparent;
-  border-color: $secondary;
-  border-right: none;
-}
-
-.form-control {
-  outline: none;
-  background-color: transparent;
-  border-color: $secondary;
-  border-left: none;
-}
-
-.form-control::placeholder {
-  color: $secondary;
-}
-
-.input-group-text {
-  cursor: pointer;
-  color: $secondary;
-}

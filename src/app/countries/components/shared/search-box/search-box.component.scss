@@ -1,0 +1,42 @@
+@import "../../../../../styles/colors.scss";
+@import "../../../../../styles/custom-styles.scss";
+
+.container {
+  width: fit-content;
+  display: inline-block;
+  margin-right: 100px;
+}
+
+.input-group {
+  background-color: transparent;
+  border-radius: 5px;
+  width: 50vh;
+}
+
+.input-group-text {
+  cursor: pointer;
+  color: $secondary;
+  background-color: transparent;
+  border-color: $secondary;
+  border-left: none;
+}
+
+.form-control {
+  textarea {
+    outline: none;
+  }
+  background-color: transparent;
+  border-color: $secondary;
+  border-right: none;
+}
+
+// .form-control:focus,
+// textarea:focus,
+// select:focus {
+//   outline: none !important;
+// }
+
+.form-control::placeholder {
+  color: $secondary;
+}
+

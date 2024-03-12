@@ -40,7 +40,6 @@ export class LoginComponent implements OnInit {
 
       this.apiService.login(userData).subscribe(
         (response) => {
-          console.log('Login successful:', response);
           this.router.navigate(['/countries']);
         },
         (error) => {
