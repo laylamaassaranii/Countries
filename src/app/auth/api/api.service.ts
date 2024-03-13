@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { API_URL } from '../constants/constants';
+import { API_URL } from '../components/constants/constants';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -15,8 +15,12 @@ export class ApiService {
     return this.http.post<any>(`${this.api_url}/api/User/SignUp()`, userData);
   }
 
+  createAdminUser(userData: any): Observable<any> {
+    return this.http.post<any>(`${this.api_url}/api/User/CreateAdminUser()`, userData);
+  }
+
   login(userData: any): Observable<any> {
-    return this.http.post<any>(`${this.api_url}/api/User/Login()`, userData)
+    return this.http.post<any>(`${this.api_url}/api/User/Login()`, userData);
   }
 
   getUserById(id: number): Observable<any> {

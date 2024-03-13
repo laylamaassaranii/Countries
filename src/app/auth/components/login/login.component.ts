@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../api/api.service';
+import { ApiService } from '../../api/api.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  focusedEmail: boolean= false;
+  focusedEmail: boolean = false;
   focusedPassword: boolean = false;
 
   constructor(
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  outOfFocusEmail(){
+  outOfFocusEmail() {
     this.focusedEmail = true;
   }
 

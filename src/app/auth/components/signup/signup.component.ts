@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../api/api.service';
+import { ApiService } from '../../api/api.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -47,15 +47,25 @@ export class SignupComponent implements OnInit {
         password: this.signupForm.get('Password')?.value,
         rolename: this.adminSelected ? '1' : '',
       };
-
-      this.apiService.createUser(userData).subscribe(
-        (response) => {
-          this.router.navigate(['/countries']);
-        },
-        (error) => {
-          console.error('Error creating user:', error);
-        }
-      );
+      if (this.adminSelected) {
+        this.apiService.createAdminUser(userData).subscribe(
+          (response) => {
+            this.router.navigate(['/countries']);
+          },
+          (error) => {
+            console.error('Error creating user:', error);
+          }
+        );
+      } else {
+        this.apiService.createUser(userData).subscribe(
+          (response) => {
+            this.router.navigate(['/countries']);
+          },
+          (error) => {
+            console.error('Error creating user:', error);
+          }
+        );
+      }
     }
   }
   getUserById(userId: number) {
