@@ -10,6 +10,7 @@ import { StateChangeService } from '../../../api/state-change/state-change.servi
 export class CardListComponent implements OnInit {
   countries: any[] = [];
   searchValue = '';
+  searchType = '';
 
   constructor(
     private apiCountriesService: ApiCountriesService,
@@ -18,14 +19,14 @@ export class CardListComponent implements OnInit {
 
   ngOnInit(): void {
     this.stateChangeService.state$.subscribe((state) => {
-      console.log(state);
-      this.searchValue = state;
-      this.getCountries(this.searchValue);
+      this.searchValue = state.value;
+      this.searchType = state.type;
+      this.getCountries(this.searchValue, this.searchType);
     });
   }
 
-  getCountries(searchValue = '') {
-    this.apiCountriesService.getCountry(searchValue).subscribe(
+  getCountries(searchValue = '', searchType = '') {
+    this.apiCountriesService.getCountry(searchValue, searchType).subscribe(
       (data) => {
         this.countries = data;
       },

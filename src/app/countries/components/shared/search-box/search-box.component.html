@@ -5,6 +5,49 @@
     (ngSubmit)="onSearchSubmit()"
   >
     <div class="input-group">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          type="button"
+          class="btn btn-secondary-light dropdown-btn limited-dropdown"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          {{
+            searchValue
+              ? searchValue.charAt(0).toUpperCase() + searchValue.slice(1)
+              : "All"
+          }}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button
+            class="btn btn-transparent nested-dropdown-btn dropdown-btn"
+            ngbDropdownItem
+          >
+            All
+          </button>
+          <div ngbDropdown class="nested-dropdown">
+            <button
+              type="button"
+              class="btn btn-transparent nested-dropdown-btn dropdown-btn"
+              id="nestedDropdownToggle"
+              ngbDropdownToggle
+            >
+              Filter by Region
+            </button>
+            <div ngbDropdownMenu aria-labelledby="nestedDropdownToggle">
+              <button
+                type="button"
+                class="btn btn-transparent nested-dropdown-btn dropdown-btn"
+                *ngFor="let region of regions"
+                ngbDropdownItem
+                (click)="selectRegion(region)"
+              >
+                Filter by {{ region }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <input
         class="form-control mr-sm-2"
         type="search"

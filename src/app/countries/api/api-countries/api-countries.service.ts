@@ -11,11 +11,15 @@ export class ApiCountriesService {
 
   constructor(private http: HttpClient) {}
 
-  getCountry(query: string = ''): Observable<any[]> {
+  getCountry(query: string = '', type: string = ''): Observable<any[]> {
     if (query) {
-      return this.http.get<any[]>(
-        `${this.api_url}/name/${query}?fullText=true`
-      );
+      if (type == 'name') {
+        return this.http.get<any[]>(
+          `${this.api_url}/name/${query}?fullText=true`
+        );
+      } else if (type == 'region') {
+        return this.http.get<any[]>(`${this.api_url}/region/${query}`);
+      }
     }
     return this.http
       .get<any[]>(`${this.api_url}/all`)
@@ -36,6 +40,18 @@ export class ApiCountriesService {
         } else {
           return null;
         }
+      })
+    );
+  }
+
+  getRegions(): Observable<string[]> {
+    return this.http.get<any[]>(`${this.api_url}/all`).pipe(
+      map((countries) => {
+        const regionsSet = new Set<string>();
+        countries.forEach((country) => {
+          regionsSet.add(country.region);
+        });
+        return Array.from(regionsSet);
       })
     );
   }

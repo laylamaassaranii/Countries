@@ -11,6 +11,7 @@ import { CountryDetailsComponent } from './components/country-details/country-de
 import { BackgroundDetailsComponent } from './components/shared/background-details/background-details.component';
 import { SearchBoxComponent } from './components/shared/search-box/search-box.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     BackgroundDetailsComponent,
     SearchBoxComponent,
   ],
-  imports: [CommonModule, CountriesRoutingModule, ReactiveFormsModule],
+  imports: [CommonModule, CountriesRoutingModule, ReactiveFormsModule, NgbModule],
 })
 export class CountriesModule {}

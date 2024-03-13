@@ -4,13 +4,13 @@
 .container {
   width: fit-content;
   display: inline-block;
-  margin-right: 100px;
+  margin-right: 150px;
 }
 
 .input-group {
   background-color: transparent;
   border-radius: 5px;
-  width: 50vh;
+  width: 75vh;
 }
 
 .input-group-text {
@@ -28,6 +28,7 @@
   background-color: transparent;
   border-color: $secondary;
   border-right: none;
+  border-left: none;
 }
 
 // .form-control:focus,
@@ -40,3 +41,17 @@
   color: $secondary;
 }
 
+.dropdown-btn {
+  border-radius: 5px 0 0 5px;
+}
+
+.limited-dropdown {
+  width: 85px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nested-dropdown-btn {
+  width: 100%;
+  border-radius: 0;
+}

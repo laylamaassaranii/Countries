@@ -15,6 +15,7 @@ export class SearchBoxComponent implements OnInit {
   });
   countries: any[] = [];
   searchResults: any[] = [];
+  regions: string[] = [];
 
   constructor(
     private apiCountriesService: ApiCountriesService,
@@ -23,7 +24,7 @@ export class SearchBoxComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.fetchData();
+    this.getRegions();
   }
 
   fetchData(): void {
@@ -31,7 +32,7 @@ export class SearchBoxComponent implements OnInit {
       .getCountry(this.searchValue)
       .subscribe((countries) => {
         this.countries = countries;
-        this.triggerStateChange();
+        this.triggerStateChangeByName();
       });
   }
 
@@ -40,11 +41,37 @@ export class SearchBoxComponent implements OnInit {
     this.fetchData();
   }
 
+  selectRegion(region: string): void {
+    this.searchValue = region;
+    this.triggerStateChangeByRegion();
+  }
+
   search(): void {
     this.onSearchSubmit();
   }
 
-  triggerStateChange(): void {
-    this.stateChangeService.updateState(this.searchValue);
+  triggerStateChangeByName(): void {
+    this.stateChangeService.updateState({
+      type: 'name',
+      value: this.searchValue,
+    });
+  }
+
+  triggerStateChangeByRegion(): void {
+    this.stateChangeService.updateState({
+      type: 'region',
+      value: this.searchValue,
+    });
+  }
+
+  getRegions(): void {
+    this.apiCountriesService.getRegions().subscribe(
+      (regions: string[]) => {
+        this.regions = regions;
+      },
+      (error) => {
+        console.error('Error fetching regions:', error);
+      }
+    );
   }
 }

@@ -1,5 +1,7 @@
 // buttons
 
+// primary buttons
+
 .btn-primary {
   background-color: $primary !important;
   border: none;
@@ -26,6 +28,46 @@
 .btn-primary-light.active,
 .btn-primary-light:focus {
   background-color: $primary !important;
+  color: $white;
+}
+
+// secondary buttons
+
+.btn-secondary {
+  background-color: $secondary !important;
+  border: none;
+}
+
+.btn-secondary:hover,
+.btn-secondary.active,
+.btn-secondary:focus {
+  background-color: $secondary-hover !important;
+}
+
+.btn-secondary-light {
+  background-color: transparent !important;
+  border: 1px solid $secondary;
+  color: $secondary;
+}
+
+.btn-secondary-light:hover,
+.btn-secondary-light.active,
+.btn-secondary-light:focus {
+  background-color: $secondary !important;
+  color: $white;
+}
+
+// transparent buttons
+
+.btn-transparent {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-transparent:hover,
+.btn-transparent.active,
+.btn-transparent:focus {
+  background-color: $light-grey !important;
   color: $white;
 }
 
