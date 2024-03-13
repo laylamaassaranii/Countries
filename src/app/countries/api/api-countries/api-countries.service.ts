@@ -18,7 +18,16 @@ export class ApiCountriesService {
           `${this.api_url}/name/${query}?fullText=true`
         );
       } else if (type == 'region') {
-        return this.http.get<any[]>(`${this.api_url}/region/${query}`);
+        return this.http
+          .get<any[]>(`${this.api_url}/region/${query}`)
+          .pipe(
+            map((countries) =>
+              countries.filter(
+                (country) =>
+                  country.name.common.trim().toLowerCase() !== 'israel'
+              )
+            )
+          );
       }
     }
     return this.http
