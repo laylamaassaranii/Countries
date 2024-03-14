@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../api/authentication/api.service';
 import { Router } from '@angular/router';
 import { AuthguardService } from '../../api/authguard/authguard.service';
+import { SharedService } from '../../api/shared/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private apiService: ApiService,
     private router: Router,
-    private authGuardService: AuthguardService
+    private sharedService: SharedService
   ) {}
 
   @ViewChild('firstNameInput') firstNameInput!: ElementRef;
@@ -42,6 +43,7 @@ export class LoginComponent implements OnInit {
 
       this.apiService.login(userData).subscribe(
         (response) => {
+          this.sharedService.setLoginResponse(response);
           this.router.navigate(['/countries']);
         },
         (error) => {

@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { TokenExpirationService } from './auth/api/tokenExpiration/token-expiration.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     HttpClientModule,
     NgxPermissionsModule.forRoot(),
   ],
-  providers: [provideClientHydration()],
+  providers: [provideClientHydration(), TokenExpirationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
