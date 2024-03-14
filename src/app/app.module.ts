@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
     NgbModule,
     MatInputModule,
     HttpClientModule,
+    NgxPermissionsModule.forRoot(),
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],

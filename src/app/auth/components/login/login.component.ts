@@ -1,7 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../api/api.service';
+import { ApiService } from '../../api/authentication/api.service';
 import { Router } from '@angular/router';
+import { AuthguardService } from '../../api/authguard/authguard.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private apiService: ApiService,
-    private router: Router
+    private router: Router,
+    private authGuardService: AuthguardService
   ) {}
 
   @ViewChild('firstNameInput') firstNameInput!: ElementRef;

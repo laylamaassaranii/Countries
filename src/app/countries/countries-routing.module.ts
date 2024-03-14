@@ -4,11 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { CountriesHomeComponent } from './components/countries-home/countries-home.component';
 import { LayoutComponent } from './components/shared/layout/layout.component';
 import { CountryDetailsComponent } from './components/country-details/country-details.component';
+import { AuthguardService } from '../auth/api/authguard/authguard.service';
+
+// const authguardService = new AuthguardService();
 
 const countriesRoutes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [AuthguardService],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: CountriesHomeComponent },
