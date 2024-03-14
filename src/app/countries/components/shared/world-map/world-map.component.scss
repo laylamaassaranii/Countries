@@ -1,13 +1,63 @@
 @import "../../../../../styles/colors.scss";
 @import "../../../../../styles/custom-styles.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+.container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.bg-container {
+  // position: absolute;
+  // width: 100%;
+  // height: 100%;
+  z-index: -5;
+}
 
 .bg {
-  background-image: url("../../../../../assets/watercolor-map.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  margin-bottom: 150px;
+  // background-image: url("../../../../../assets/image3.jpg");
+  // background-position: right;
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  height: 0vh;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  flex: 1;
+  z-index: -1;
+}
+
+.showing {
+  height: 90vh;
+  animation: fadeIn 1s ease forwards, slideUp 1s ease forwards;
+  opacity: 1;
+  z-index: 0;
+}
+
+.bg.change {
+  animation: changeBg 3s ease forwards;
+  animation-delay: 7s;
+}
+
+.h-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  font-family: "Roboto Slab", serif;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease forwards, slideIn 0.9s ease forwards;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  animation: fadeIn 1s ease forwards, slideIn 1s ease forwards;
 }
 
 .bg-stain {
@@ -20,12 +70,51 @@
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  // transform: rotate(90deg); /* Rotate the background image by 90 degrees */
 }
-h1 {
-  font-size: 48px;
-  color: $dark-blue;
-  font-family: "Indie Flower", cursive;
-  text-align: center;
-  text-shadow: 2px 2px 0 $light-grey;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-30%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes changeBg {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background-image: url("../../../../../assets/image5.jpg");
+  }
+}
+
+// .container.hide .bg {
+//   animation: changeBg 1s ease forwards;
+//   animation-delay: 7s; /* Delay the background image change */
+// }
+
+// .container.hide h1,
+// .container.hide h2 {
+//   opacity: 0;
+// }
