@@ -1,6 +1,6 @@
 @import "../../../../../styles/colors.scss";
 @import "../../../../../styles/custom-styles.scss";
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 
 .container {
   display: flex;
@@ -49,7 +49,7 @@
 
 h1 {
   font-size: 36px;
-  font-family: "Roboto Slab", serif;
+  // font-family: "Roboto Slab", serif;
   margin-bottom: 20px;
   animation: fadeIn 1s ease forwards, slideIn 0.9s ease forwards;
 }

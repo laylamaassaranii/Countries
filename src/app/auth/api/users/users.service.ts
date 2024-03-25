@@ -35,27 +35,19 @@ export class UsersService {
 
   // Add a user to the IndexedDB store
   addUser(user: any): Promise<void> {
-
     return new Promise(async (resolve, reject) => {
-      console.log('hello');
       try {
         const db = await this.openDatabase();
         const transaction = db.transaction(this.storeName, 'readwrite');
         const store = transaction.objectStore(this.storeName);
         const request = store.add(user);
         request.onsuccess = (event) => {
-          console.log('hello2');
-
           resolve();
         };
         request.onerror = (event) => {
-          console.log('hello3');
-
           reject('Error adding user to IndexedDB');
         };
       } catch (error) {
-        console.log('hello4');
-
         reject('Error adding user to IndexedDB');
       }
     });

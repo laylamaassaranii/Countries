@@ -28,7 +28,6 @@ export class AuthguardService implements CanActivate {
         const timeLeft = decodedToken.exp * 1000;
         const currentTime = Date.now();
         const remainingTime = timeLeft - currentTime;
-        console.log(remainingTime);
         if (remainingTime > 0) {
           return true;
         } else {
@@ -47,20 +46,18 @@ export class AuthguardService implements CanActivate {
     localStorage.removeItem('user');
   }
 
-  // isAdmin(): boolean {
-  //   const user = this.getUserData();
-  //   const token = user ? user.AccessToken : null;
-  //   const roles = this.decodeToken(token)?.realm_access?.roles;
-  //   return roles?.includes('Admin');
-  // }
-
-  // decodeToken(token: string): any {
-  //   if (!token) return null;
-
-  //   const [, payload] = token.split('.', 3); // Split the token into three parts and get the payload (middle part)
-  //   const decodedPayload = atob(payload); // Decode the base64 encoded payload
-  //   return JSON.parse(decodedPayload); // Parse the JSON payload
-  // }
+  isAdmin(): Observable<boolean> {
+    return this.sharedService.loginResponse$.pipe(
+      map((response) => {
+        const token = response.Login.AccessToken;
+        const roles = this.decodeToken(token)?.realm_access?.roles;
+        console.log(token);
+        console.log(roles);
+        console.log(roles?.includes('Admin'));
+        return roles?.includes('Admin');
+      })
+    );
+  }
 
   decodeToken(token: string): any {
     try {

@@ -10,13 +10,7 @@ import { TokenExpirationService } from '../../../../auth/api/tokenExpiration/tok
 export class LayoutComponent implements OnDestroy {
   private tokenExpirationSubscription: Subscription | undefined;
 
-  constructor(private tokenExpirationService: TokenExpirationService) {
-    // Subscribe to token expiration events
-    // this.tokenExpirationSubscription = this.tokenExpirationService.expirationEvent$.subscribe(() => {
-    //   // Perform logout or other actions when token expires
-    //   this.logout();
-    // });
-  }
+  constructor(private tokenExpirationService: TokenExpirationService) {}
 
   ngOnDestroy() {
     // Unsubscribe from token expiration service

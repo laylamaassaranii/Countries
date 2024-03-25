@@ -1,4 +1,5 @@
 <app-background-details></app-background-details>
+
 <div *ngIf="country" class="card">
   <div class="row g-0 h-100">
     <div class="col-md-6 img-container h-100">
@@ -8,22 +9,68 @@
         class="rounded-start img-fluid"
       />
     </div>
+
     <div class="col-md-6 card-container-body">
       <div class="card-body">
-        <h5 class="card-title">{{ country.name.common }}</h5>
-        <p class="card-text">
-          <strong>Official Name: </strong>{{ country.name.official }}
-        </p>
-        <p class="card-text">
-          <strong>Capital: </strong>{{ country.capital[0] }}
-        </p>
-        <p class="card-text"><strong>Region: </strong>{{ country.region }}</p>
-        <p class="card-text">
-          <strong>Population: </strong>{{ country.population }}
-        </p>
-        <p class="card-text">
-          <strong>Area: </strong>{{ country.area }} square kilometers
-        </p>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="card-title">{{ country.name.common }}</h5>
+          <ng-container *ngIf="isAdmin" class="edit-icon">
+            <i
+              class="fas fa-edit edit-icon cursor-pointer"
+              (click)="editCountry()"
+            ></i>
+          </ng-container>
+        </div>
+        <div class="input-with-label">
+          <label for="editedCountryName">Country Name:</label>
+          <input
+            id="editedCountryName"
+            [(ngModel)]="editedCountryName"
+            class="input-as-paragraph"
+            [readonly]="isReadOnly"
+            (ngModelChange)="updateField('name', $event)"
+          />
+        </div>
+        <div class="input-with-label">
+          <label for="editedCapital">Capital:</label>
+          <input
+            id="editedCapital"
+            [(ngModel)]="editedCapital"
+            class="input-as-paragraph"
+            [readonly]="isReadOnly"
+            (ngModelChange)="updateField('capital', $event)"
+          />
+        </div>
+        <div class="input-with-label">
+          <label for="editedRegion">Region:</label>
+          <input
+            id="editedRegion"
+            [(ngModel)]="editedRegion"
+            class="input-as-paragraph"
+            [readonly]="isReadOnly"
+            (ngModelChange)="updateField('region', $event)"
+          />
+        </div>
+        <div class="input-with-label">
+          <label for="editedPopulation">Population:</label>
+          <input
+            id="editedPopulation"
+            [(ngModel)]="editedPopulation"
+            class="input-as-paragraph"
+            [readonly]="isReadOnly"
+            (ngModelChange)="updateField('population', $event)"
+          />
+        </div>
+        <div class="input-with-label">
+          <label for="editedArea">Area:</label>
+          <input
+            id="editedArea"
+            [(ngModel)]="editedArea"
+            class="input-as-paragraph"
+            [readonly]="isReadOnly"
+            (ngModelChange)="updateField('area', $event)"
+          />
+        </div>
       </div>
     </div>
   </div>

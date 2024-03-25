@@ -45,7 +45,7 @@ export class ApiService {
   logout(): Observable<any> {
     return this.http.post<any>(`${this.api_url}/api/User/Logout()`, {}).pipe(
       tap(() => {
-        // localStorage.removeItem('userResponse');
+        localStorage.removeItem('userResponse');
         this.router.navigate(['/login']);
       })
     );

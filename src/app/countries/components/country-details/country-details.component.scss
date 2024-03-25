@@ -3,13 +3,9 @@
 
 .card {
   width: 800px;
-  //   margin: auto;
-  //   padding: 70px 50px;
   position: absolute;
   top: 50%;
   left: 50%;
-  //   background-color: rgba(255, 255, 255, 1);
-  transform: translate(-50%, -50%);
   border-radius: 10px;
   border: none;
   box-shadow: 0 0 5px rgba(0, 0.1, 0, 0.1);
@@ -17,28 +13,17 @@
   transition: box-shadow 0.15s ease;
   margin-bottom: 25px;
   overflow: hidden;
+  transform: translate(-50%, -50%);
 }
 
-// .card-img-container img {
-//   height: 100%;
-//   width: 100%;
-//   object-fit: cover;
-// }
-
-.card-title {
-  padding-bottom: 8px;
-}
-.card-container-body {
-  max-height: 100%;
-}
 .card:hover {
   box-shadow: 0 0 9px rgba(0, 0.1, 0, 0.2);
 }
 
 .card-body {
   padding: 15px;
-  //   width: 500px;
 }
+
 .card-text {
   font-size: 14px;
   padding: 2px 0;
@@ -65,4 +50,37 @@
   font-size: 12px;
   font-style: italic;
   margin-bottom: 5px;
+}
+
+.edit-icon {
+  margin-right: 2px;
+  width: 24px;
+  height: 24px;
+  color: $light-grey;
+  cursor: pointer;
+}
+
+.input-with-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-with-label label {
+  flex: 0 0 120px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.input-as-paragraph {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.input-as-paragraph:focus {
+  outline: none;
 }

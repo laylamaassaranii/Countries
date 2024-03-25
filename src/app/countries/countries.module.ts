@@ -10,7 +10,7 @@ import { CardListComponent } from './components/card-list/card-list/card-list.co
 import { CountryDetailsComponent } from './components/country-details/country-details.component';
 import { BackgroundDetailsComponent } from './components/shared/background-details/background-details.component';
 import { SearchBoxComponent } from './components/shared/search-box/search-box.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -25,6 +25,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BackgroundDetailsComponent,
     SearchBoxComponent,
   ],
-  imports: [CommonModule, CountriesRoutingModule, ReactiveFormsModule, NgbModule],
+  imports: [CommonModule, CountriesRoutingModule, ReactiveFormsModule, NgbModule, FormsModule],
 })
 export class CountriesModule {}
